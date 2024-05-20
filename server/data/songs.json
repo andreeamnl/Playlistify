@@ -1,121 +1,121 @@
 [
-  {
-    "id": 1,
-    "title": "I Don't Care",
-    "artist": "Apocalyptica, Adam Gontier",
-    "duration": "3:57",
-    "liked": false
-  },
-  {
-    "id": 2,
-    "title": "Teancuri",
-    "artist": "E lan",
-    "duration": "2:21",
-    "liked": false
-  },
-  {
-    "id": 3,
-    "title": "numărând victorii",
-    "artist": "Oscar",
-    "duration": "2:53",
-    "liked": false
-  },
-  {
-    "id": 4,
-    "title": "Despre Tine Cant (Part 2)",
-    "artist": "Dan Balan",
-    "duration": "4:03",
-    "liked": false
-  },
-  {
-    "id": 5,
-    "title": "older",
-    "artist": "Isabel LaRosa",
-    "duration": "2:18",
-    "liked": false
-  },
-  {
-    "id": 6,
-    "title": "We Still Don't Trust You",
-    "artist": "Future, Metro Boomin, The Weeknd",
-    "duration": "4:13",
-    "liked": false
-  },
-  {
-    "id": 7,
-    "title": "Break Stuff",
-    "artist": "Limp Bizkit",
-    "duration": "2:47",
-    "liked": false
-  },
-  {
-    "id": 8,
-    "title": "Armee der Tristen",
-    "artist": "Rammstein",
-    "duration": "3:26",
-    "liked": false
-  },
-  {
-    "id": 9,
-    "title": "la di die (feat. Jaden Hossler)",
-    "artist": "Nessa Barrett, jxdn",
-    "duration": "3:15",
-    "liked": false
-  },
-  {
-    "id": 10,
-    "title": "Helena",
-    "artist": "My Chemical Romance",
-    "duration": "3:25",
-    "liked": false
-  },
-  {
-    "id": 11,
-    "title": "obsessed",
-    "artist": "Olivia Rodrigo",
-    "duration": "2:51",
-    "liked": false
-  },
-  {
-    "id": 12,
-    "title": "Banii",
-    "artist": "Tzanca Uraganu, Manele Mentolate",
-    "duration": "2:17",
-    "liked": false
-  },
-  {
-    "id": 13,
-    "title": "BEWARE OF DOGS",
-    "artist": "Chief Keef, Mike WiLL Made-It",
-    "duration": "1:30",
-    "liked": false
-  },
-  {
-    "id": 14,
-    "title": "FRANCE FREESTYLE",
-    "artist": "EBaby Keem",
-    "duration": "2:26",
-    "liked": false
-  },
-  {
-    "id": 15,
-    "title": "Get It Sexyy",
-    "artist": "E Sexyy Red",
-    "duration": "2:29",
-    "liked": false
-  },
-  {
-    "id": 16,
-    "title": "Whatever She Wants",
-    "artist": "Bryson Tiller",
-    "duration": "2:41",
-    "liked": false
-  },
-  {
-    "id": 17,
-    "title": "DĂ-I ȚIGANCA",
-    "artist": "Beach, Please!, Gheboasă",
-    "duration": "2:37",
-    "liked": false
-  }
+    {
+        "id": 1,
+        "title": "I Don't Care",
+        "artist": "Apocalyptica, Adam Gontier",
+        "duration": "3:57",
+        "liked": false
+    },
+    {
+        "id": 2,
+        "title": "Teancuri",
+        "artist": "E lan",
+        "duration": "2:21",
+        "liked": false
+    },
+    {
+        "id": 3,
+        "title": "num\u0103r\u00e2nd victorii",
+        "artist": "Oscar",
+        "duration": "2:53",
+        "liked": false
+    },
+    {
+        "id": 4,
+        "title": "Despre Tine Cant (Part 2)",
+        "artist": "Dan Balan",
+        "duration": "4:03",
+        "liked": false
+    },
+    {
+        "id": 5,
+        "title": "older",
+        "artist": "Isabel LaRosa",
+        "duration": "2:18",
+        "liked": false
+    },
+    {
+        "id": 6,
+        "title": "We Still Don't Trust You",
+        "artist": "Future, Metro Boomin, The Weeknd",
+        "duration": "4:13",
+        "liked": false
+    },
+    {
+        "id": 7,
+        "title": "Break Stuff",
+        "artist": "Limp Bizkit",
+        "duration": "2:47",
+        "liked": false
+    },
+    {
+        "id": 8,
+        "title": "Armee der Tristen",
+        "artist": "Rammstein",
+        "duration": "3:26",
+        "liked": false
+    },
+    {
+        "id": 9,
+        "title": "la di die (feat. Jaden Hossler)",
+        "artist": "Nessa Barrett, jxdn",
+        "duration": "3:15",
+        "liked": false
+    },
+    {
+        "id": 10,
+        "title": "Helena",
+        "artist": "My Chemical Romance",
+        "duration": "3:25",
+        "liked": false
+    },
+    {
+        "id": 11,
+        "title": "obsessed",
+        "artist": "Olivia Rodrigo",
+        "duration": "2:51",
+        "liked": false
+    },
+    {
+        "id": 12,
+        "title": "Banii",
+        "artist": "Tzanca Uraganu, Manele Mentolate",
+        "duration": "2:17",
+        "liked": false
+    },
+    {
+        "id": 13,
+        "title": "BEWARE OF DOGS",
+        "artist": "Chief Keef, Mike WiLL Made-It",
+        "duration": "1:30",
+        "liked": false
+    },
+    {
+        "id": 14,
+        "title": "FRANCE FREESTYLE",
+        "artist": "Baby Keem",
+        "duration": "2:26",
+        "liked": false
+    },
+    {
+        "id": 15,
+        "title": "Get It Sexyy",
+        "artist": "Sexyy Red",
+        "duration": "2:29",
+        "liked": false
+    },
+    {
+        "id": 16,
+        "title": "Whatever She Wants",
+        "artist": "Bryson Tiller",
+        "duration": "2:41",
+        "liked": false
+    },
+    {
+        "id": 17,
+        "title": "D\u0102-I \u021aIGANCA",
+        "artist": "Beach, Please!, Gheboas\u0103",
+        "duration": "2:37",
+        "liked": false
+    }
 ]

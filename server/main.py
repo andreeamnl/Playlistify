@@ -1,13 +1,19 @@
 from datetime import datetime, timedelta, timezone
 from typing import Annotated, Union
+from pathlib import Path
+from typing import List
+
+
 
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-
+import json
+import random
 
 # to get a string like this run:
 # openssl rand -hex 32
@@ -158,3 +164,98 @@ async def read_own_items(
     current_user: Annotated[User, Depends(get_current_active_user)],
 ):
     return [{"item_id": "Foo", "owner": current_user.username}]
+
+@app.get("/songs")
+async def get_songs():
+    # Define the path to the songs.json file
+    songs_json_path = "data/songs.json"
+    # Check if the file exists
+    if songs_json_path:
+        # Read the content of the file
+        with open(songs_json_path, "r") as file:
+            songs_data = json.load(file)
+        # Return the content as JSONResponse
+        return JSONResponse(content=songs_data)
+    else:
+        # If the file doesn't exist, raise an HTTPException
+        raise HTTPException(status_code=404, detail="Songs file not found")
+class SongInput(BaseModel):
+    title: str
+    artist: str
+
+class Song(BaseModel):
+    id: int
+    title: str
+    artist: str
+    duration: str
+    liked: bool = False
+
+DATA_FILE = Path("data/songs.json")
+
+def load_songs() -> List[dict]:
+    if DATA_FILE.exists():
+        with open(DATA_FILE, "r") as file:
+            return json.load(file)
+    return []
+
+def save_songs(songs: List[dict]):
+    with open(DATA_FILE, "w") as file:
+        json.dump(songs, file, indent=4)
+
+@app.post("/addsong", response_model=Song)
+async def add_song(song_input: SongInput):
+    songs = load_songs()
+
+    # Check if a song with the same title and artist already exists
+    if any(song['title'] == song_input.title and song['artist'] == song_input.artist for song in songs):
+        raise HTTPException(status_code=400, detail="Song with same title and artist already exists")
+
+    # Generate a random duration for the song (e.g., "2:45")
+    duration_minutes = random.randint(1, 5)  # Generate a random number of minutes
+    duration_seconds = random.randint(0, 59)  # Generate a random number of seconds
+    duration = f"{duration_minutes}:{duration_seconds:02}"  # Format as MM:SS
+
+    # Generate a new id
+    new_id = max([song["id"] for song in songs], default=0) + 1
+
+    # Create a new song dictionary with the provided songname, songartist, and generated duration
+    new_song = {
+        "id": new_id,
+        "title": song_input.title,
+        "artist": song_input.artist,
+        "duration": duration,
+        "liked": False
+    }
+
+    # Append the new song to the songs list
+    songs.append(new_song)
+
+    # Save the updated songs list to the JSON file
+    save_songs(songs)
+
+    # Return the newly created song
+    return new_song
+
+@app.delete("/deletesong", response_model=dict)
+async def delete_song(song_input: SongInput):
+    songs = load_songs()
+    song_to_delete = None
+
+    # Find the song in the list
+    for song in songs:
+        if song["title"] == song_input.title and song["artist"] == song_input.artist:
+            song_to_delete = song
+            break
+
+    if not song_to_delete:
+        raise HTTPException(status_code=404, detail="Song not found")
+        
+
+    # Remove the song from the list
+    songs.remove(song_to_delete)
+
+    # Save the updated songs list to the JSON file
+    save_songs(songs)
+
+    # Return a success message
+    return {"message": "Song deleted successfully"}
